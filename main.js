@@ -87,3 +87,52 @@ function circlePerlinv2() {
     }
     endShape()
 }
+
+
+
+
+/****** HERE ARE SOME EXERCISES ABOUT COLOR WITH PERLIN NOISE ******/
+
+function perlin2Dcolor() {
+    loadPixels();
+    beginShape();
+    for (var i = 0; i < width; i++) {
+        var xoff = 0;
+        for (var j = 0; j < height; j++) {
+            var index = (i + j * width) * 4;
+            n = noise(xoff, yoff) * 255;
+            pixels[index + 0] = n; // <- r
+            pixels[index + 1] = n ; // <- g
+            pixels[index + 2] = n ; // <- b
+            pixels[index + 3] = 255; // <- alpha
+            xoff += 0.01;
+        }
+        yoff += 0.001;
+    }
+
+    updatePixels();
+    endShape();
+
+    noLoop();
+}
+
+function perlinCircleColor() {
+
+    noFill();
+    strokeWeight(2);
+
+    r = noise(t) * 255;
+    g = noise(t + 80) * 255;
+    b = noise(t + 500) * 255
+
+    stroke(r,g,b);
+
+    x = noise(t) * width;
+    y = noise(t + 10) * height;
+
+    r = noise(t + 16) * 50;
+    ellipse(x, y, r, r)
+
+    t += 0.01;
+
+}
