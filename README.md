@@ -6,3 +6,6 @@ Code and notes of the WeCode 2018 Live Coding.
 
 
 ❤️
+
+
+Update: [Video of the Live Coding](https://www.youtube.com/watch?v=UyWOFN26464)
